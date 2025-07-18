@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import AllItems from './AllItems'
 import CreateScreen from './CreateScreen'
+import Cards from './Cards'
 
 
 const HomeScreen = () => {
@@ -26,10 +27,14 @@ const HomeScreen = () => {
                 <Pressable style={[styles.button, view === 2 ? { backgroundColor: "#72C37AFF" } : null]} onPress={() => setView(2)}>
                     <Text style={[styles.btnText, view === 2 ? { color: "white" } : null]}>Create</Text>
                 </Pressable>
+                 <Pressable style={[styles.button, view === 3 ? { backgroundColor: "#72C37AFF" } : null]} onPress={() => setView(3)}>
+                    <Text style={[styles.btnText, view === 3 ? { color: "white" } : null]}>Cards</Text>
+                </Pressable>
             </View>
             {view === 0 && <AllItems data={data} />}
             {view === 1 && <AllItems data={data.filter(item => item.stock < 20)} />}
             {view === 2 && <CreateScreen data={data} setData={setData} />}
+            {view === 3 && <Cards />}
         </View>
     )
 }
@@ -40,7 +45,7 @@ const styles = StyleSheet.create({
     container: {
         marginBlockStart: 50,
         width: "100%",
-        height: "100%",
+        height:"100%",
         padding: "4%",
         backgroundColor: "#fff"
     },
