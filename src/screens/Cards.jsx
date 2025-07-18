@@ -20,10 +20,9 @@ export default Cards
 
 const styles = StyleSheet.create({
     container : {
-        padding:10,
-        flexDirection:"row",
+      flexDirection:"row",
         flexWrap:"wrap",
-        justifyContent:"space-around"
+        marginRight:50,
     },
     card:{
         width:100,
@@ -32,7 +31,8 @@ const styles = StyleSheet.create({
         borderRadius:10,
         justifyContent:"center",
         alignItems:"center",
-        marginVertical:10
+        marginVertical:10,
+        margin:10
     },
     cardText:{
         fontSize:30,
